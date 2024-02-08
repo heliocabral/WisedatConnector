@@ -32,6 +32,8 @@ Partial Class OdbcView
         TextBox1 = New TextBox()
         TextBox2 = New TextBox()
         TextBox3 = New TextBox()
+        PictureBox1 = New PictureBox()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
@@ -57,7 +59,7 @@ Partial Class OdbcView
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label3.Location = New Point(115, 91)
+        Label3.Location = New Point(246, 86)
         Label3.Name = "Label3"
         Label3.Size = New Size(54, 15)
         Label3.TabIndex = 1
@@ -67,7 +69,7 @@ Partial Class OdbcView
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label4.Location = New Point(89, 121)
+        Label4.Location = New Point(220, 116)
         Label4.Name = "Label4"
         Label4.Size = New Size(80, 15)
         Label4.TabIndex = 1
@@ -77,7 +79,7 @@ Partial Class OdbcView
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label5.Location = New Point(108, 150)
+        Label5.Location = New Point(239, 145)
         Label5.Name = "Label5"
         Label5.Size = New Size(61, 15)
         Label5.TabIndex = 1
@@ -87,7 +89,7 @@ Partial Class OdbcView
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label6.Location = New Point(126, 179)
+        Label6.Location = New Point(257, 174)
         Label6.Name = "Label6"
         Label6.Size = New Size(43, 15)
         Label6.TabIndex = 1
@@ -98,38 +100,51 @@ Partial Class OdbcView
         ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBox1.FormattingEnabled = True
         ComboBox1.Items.AddRange(New Object() {"Autenticação Windows", "Autenticação SQL Server"})
-        ComboBox1.Location = New Point(175, 118)
+        ComboBox1.Location = New Point(306, 113)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(267, 23)
+        ComboBox1.Size = New Size(235, 23)
         ComboBox1.TabIndex = 2
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(175, 88)
+        TextBox1.Location = New Point(306, 83)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(267, 23)
+        TextBox1.Size = New Size(235, 23)
         TextBox1.TabIndex = 1
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(175, 147)
+        TextBox2.Enabled = False
+        TextBox2.Location = New Point(306, 142)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(267, 23)
+        TextBox2.Size = New Size(235, 23)
         TextBox2.TabIndex = 3
         ' 
         ' TextBox3
         ' 
-        TextBox3.Location = New Point(175, 176)
+        TextBox3.Enabled = False
+        TextBox3.Location = New Point(306, 171)
         TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(267, 23)
+        TextBox3.Size = New Size(235, 23)
         TextBox3.TabIndex = 4
         TextBox3.UseSystemPasswordChar = True
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = My.Resources.Resources.ODBC
+        PictureBox1.Location = New Point(51, 83)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(132, 111)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 5
+        PictureBox1.TabStop = False
         ' 
         ' OdbcView
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
+        Controls.Add(PictureBox1)
         Controls.Add(TextBox3)
         Controls.Add(TextBox2)
         Controls.Add(TextBox1)
@@ -141,7 +156,8 @@ Partial Class OdbcView
         Controls.Add(Label2)
         Controls.Add(Label1)
         Name = "OdbcView"
-        Size = New Size(522, 274)
+        Size = New Size(572, 239)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -156,4 +172,5 @@ Partial Class OdbcView
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
