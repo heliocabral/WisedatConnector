@@ -25,6 +25,10 @@
             Throw
         End Try
     End Function
+
+    Public Function getTotalViewsCount() As Integer
+        Return Me.ViewList.Count
+    End Function
 #End Region
 
 

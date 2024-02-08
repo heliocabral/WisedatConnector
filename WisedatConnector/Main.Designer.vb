@@ -28,7 +28,7 @@ Partial Class Main
         Label1 = New Label()
         Panel3 = New Panel()
         btCancel = New Button()
-        beNext = New Button()
+        btNext = New Button()
         btPrevious = New Button()
         panelMain = New Panel()
         Panel1.SuspendLayout()
@@ -84,7 +84,7 @@ Partial Class Main
         ' 
         Panel3.BackColor = Color.WhiteSmoke
         Panel3.Controls.Add(btCancel)
-        Panel3.Controls.Add(beNext)
+        Panel3.Controls.Add(btNext)
         Panel3.Controls.Add(btPrevious)
         Panel3.Dock = DockStyle.Bottom
         Panel3.Location = New Point(0, 302)
@@ -103,15 +103,15 @@ Partial Class Main
         btCancel.Text = "&Cancelar"
         btCancel.UseVisualStyleBackColor = True
         ' 
-        ' beNext
+        ' btNext
         ' 
-        beNext.FlatStyle = FlatStyle.Flat
-        beNext.Location = New Point(404, 7)
-        beNext.Name = "beNext"
-        beNext.Size = New Size(75, 23)
-        beNext.TabIndex = 1
-        beNext.Text = "&Próximo >"
-        beNext.UseVisualStyleBackColor = True
+        btNext.FlatStyle = FlatStyle.Flat
+        btNext.Location = New Point(404, 7)
+        btNext.Name = "btNext"
+        btNext.Size = New Size(75, 23)
+        btNext.TabIndex = 1
+        btNext.Text = "&Próximo >"
+        btNext.UseVisualStyleBackColor = True
         ' 
         ' btPrevious
         ' 
@@ -158,7 +158,7 @@ Partial Class Main
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents btCancel As Button
-    Friend WithEvents beNext As Button
+    Friend WithEvents btNext As Button
     Friend WithEvents btPrevious As Button
     Friend WithEvents panelMain As Panel
 End Class
