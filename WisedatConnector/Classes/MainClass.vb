@@ -11,6 +11,7 @@
     Private Sub ViewListInit()
         With Me.ViewList
             .Add(New WelcomeView)
+            .Add(New OdbcView)
         End With
     End Sub
 
