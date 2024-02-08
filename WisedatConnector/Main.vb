@@ -24,4 +24,10 @@
             End
         End Try
     End Sub
+
+    Private Sub btCancel_Click(sender As Object, e As EventArgs) Handles btCancel.Click
+        If MsgBox("Deseja realmente cancelar o assistente?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar operação") = MsgBoxResult.Yes Then
+            End
+        End If
+    End Sub
 End Class
