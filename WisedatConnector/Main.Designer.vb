@@ -30,6 +30,7 @@ Partial Class Main
         btCancelar = New Button()
         btProximo = New Button()
         btAnterior = New Button()
+        panelMain = New Panel()
         Panel1.SuspendLayout()
         Panel4.SuspendLayout()
         Panel3.SuspendLayout()
@@ -122,12 +123,21 @@ Partial Class Main
         btAnterior.Text = "< &Anterior"
         btAnterior.UseVisualStyleBackColor = True
         ' 
+        ' panelMain
+        ' 
+        panelMain.Dock = DockStyle.Fill
+        panelMain.Location = New Point(0, 63)
+        panelMain.Name = "panelMain"
+        panelMain.Size = New Size(572, 239)
+        panelMain.TabIndex = 3
+        ' 
         ' Main
         ' 
         AutoScaleDimensions = New SizeF(96F, 96F)
         AutoScaleMode = AutoScaleMode.Dpi
         BackColor = Color.White
         ClientSize = New Size(572, 338)
+        Controls.Add(panelMain)
         Controls.Add(Panel3)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.FixedDialog
@@ -150,4 +160,5 @@ Partial Class Main
     Friend WithEvents btCancelar As Button
     Friend WithEvents btProximo As Button
     Friend WithEvents btAnterior As Button
+    Friend WithEvents panelMain As Panel
 End Class
