@@ -14,9 +14,11 @@
         If Combo_Auth.SelectedIndex = 0 Then
             Text_User.Enabled = False
             Text_Password.Enabled = False
+            Text_Db.Enabled = False
         Else
             Text_User.Enabled = True
             Text_Password.Enabled = True
+            Text_Db.Enabled = True
         End If
     End Sub
 End Class

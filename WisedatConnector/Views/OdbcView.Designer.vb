@@ -34,7 +34,7 @@ Partial Class OdbcView
         Text_Password = New TextBox()
         PictureBox1 = New PictureBox()
         Label7 = New Label()
-        Text_DB = New TextBox()
+        Text_Db = New TextBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -156,15 +156,15 @@ Partial Class OdbcView
         Label7.TabIndex = 1
         Label7.Text = "Base de dados:"
         ' 
-        ' Text_DB
+        ' Text_Db
         ' 
-        Text_DB.Enabled = False
-        Text_DB.Location = New Point(351, 249)
-        Text_DB.Margin = New Padding(3, 4, 3, 4)
-        Text_DB.Name = "Text_DB"
-        Text_DB.Size = New Size(268, 27)
-        Text_DB.TabIndex = 4
-        Text_DB.UseSystemPasswordChar = True
+        Text_Db.Enabled = False
+        Text_Db.Location = New Point(351, 249)
+        Text_Db.Margin = New Padding(3, 4, 3, 4)
+        Text_Db.Name = "Text_Db"
+        Text_Db.Size = New Size(268, 27)
+        Text_Db.TabIndex = 5
+        Text_Db.UseSystemPasswordChar = True
         ' 
         ' OdbcView
         ' 
@@ -172,7 +172,7 @@ Partial Class OdbcView
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         Controls.Add(PictureBox1)
-        Controls.Add(Text_DB)
+        Controls.Add(Text_Db)
         Controls.Add(Text_Password)
         Controls.Add(Text_User)
         Controls.Add(Text_Server)
@@ -204,5 +204,5 @@ Partial Class OdbcView
     Friend WithEvents Text_Password As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents Text_DB As TextBox
+    Friend WithEvents Text_Db As TextBox
 End Class

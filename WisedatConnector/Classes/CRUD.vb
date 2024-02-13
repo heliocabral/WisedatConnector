@@ -6,7 +6,7 @@ Public Class CRUD
     Public sqlConn As New SqlConnection("Data Source=" &
         My.Settings.ODBC_Server & ";Initial Catalog=" & My.Settings.ODBC_DB &
         ";User Id=" & My.Settings.ODBC_User & ";Password=" &
-        My.Settings.ODBC_Password & ";")
+        My.Settings.ODBC_Password & ";Integrated Security=False;")
 
     Public Sub TestDbConn()
         ' Testa a ligação à base de dados
@@ -26,13 +26,6 @@ Public Class CRUD
 
     End Sub
     Public Function ExecQuerryTransaction(ByVal SQL() As SqlClient.SqlCommand)
-
-        'For Each c As SqlClient.SqlCommand In SQL
-        '    MsgBox(c.CommandText)
-        '    For Each d As SqlClient.SqlParameter In c.Parameters
-        '        MsgBox(d.ParameterName & ":  " & d.Value)
-        '    Next
-        'Next
 
         Dim sqlCmd As New SqlClient.SqlCommand
         sqlCmd.Connection = sqlConn
@@ -61,32 +54,6 @@ Public Class CRUD
 
         Return 0
     End Function
-
-    'Public Function ExecQuerryTransaction(ByVal SQL() As String)
-    '    Dim sqlCmd As New SqlClient.SqlCommand
-    '    sqlCmd.Connection = sqlConn
-    '    sqlCmd.Connection.Open()
-
-    '    Dim sqlTrans As SqlClient.SqlTransaction
-    '    sqlTrans = sqlConn.BeginTransaction()
-    '    sqlCmd.Transaction = sqlTrans
-
-    '    Try
-    '        For Each sqlline In SQL
-    '            sqlCmd.CommandText = sqlline
-    '            sqlCmd.ExecuteNonQuery()
-    '        Next
-
-    '        sqlTrans.Commit()
-    '    Catch ex As Exception
-    '        sqlTrans.Rollback()
-    '        MsgBox(ex.Message, MsgBoxStyle.Critical)
-    '        Return 1
-    '    End Try
-
-    '    Return 0
-    'End Function
-
     Public Sub InsertDB(ByVal SqlCmd As SqlClient.SqlCommand)
         Dim SqlConn As New SqlClient.SqlConnection
 
@@ -139,7 +106,6 @@ Public Class CRUD
         Return sqlDr
 
     End Function
-
     Public Function HasResults(ByVal SqlCmd As SqlClient.SqlCommand) As Boolean
 
         Dim sqlConn As New SqlClient.SqlConnection

@@ -71,6 +71,9 @@
     End Sub
 
     Private Sub btNext_Click(sender As Object, e As EventArgs) Handles btNext.Click
+
+        ' Verifica se existem validações
+
         Try
             If CurrentViewValidation(WizardCurrentStep + 1) Then
                 WizardCurrentStep += 1
