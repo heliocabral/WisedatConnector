@@ -42,9 +42,9 @@ Partial Class Main
         Panel1.Controls.Add(Panel4)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
-        Panel1.Margin = New Padding(3, 2, 3, 2)
+        Panel1.Margin = New Padding(4, 2, 4, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(572, 63)
+        Panel1.Size = New Size(715, 79)
         Panel1.TabIndex = 0
         ' 
         ' Panel4
@@ -53,9 +53,9 @@ Partial Class Main
         Panel4.Controls.Add(Label1)
         Panel4.Dock = DockStyle.Left
         Panel4.Location = New Point(0, 0)
-        Panel4.Margin = New Padding(3, 2, 3, 2)
+        Panel4.Margin = New Padding(4, 2, 4, 2)
         Panel4.Name = "Panel4"
-        Panel4.Size = New Size(292, 63)
+        Panel4.Size = New Size(365, 79)
         Panel4.TabIndex = 0
         ' 
         ' Label2
@@ -63,9 +63,10 @@ Partial Class Main
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.ForeColor = Color.White
-        Label2.Location = New Point(25, 36)
+        Label2.Location = New Point(31, 45)
+        Label2.Margin = New Padding(4, 0, 4, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(224, 19)
+        Label2.Size = New Size(276, 23)
         Label2.TabIndex = 1
         Label2.Text = "Assistente de exportação de dados"
         ' 
@@ -74,9 +75,10 @@ Partial Class Main
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.ForeColor = Color.White
-        Label1.Location = New Point(10, 6)
+        Label1.Location = New Point(12, 8)
+        Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(194, 25)
+        Label1.Size = New Size(230, 31)
         Label1.TabIndex = 0
         Label1.Text = "WISEDAT Connector"
         ' 
@@ -87,28 +89,30 @@ Partial Class Main
         Panel3.Controls.Add(btNext)
         Panel3.Controls.Add(btPrevious)
         Panel3.Dock = DockStyle.Bottom
-        Panel3.Location = New Point(0, 302)
-        Panel3.Margin = New Padding(3, 2, 3, 2)
+        Panel3.Location = New Point(0, 377)
+        Panel3.Margin = New Padding(4, 2, 4, 2)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(572, 36)
+        Panel3.Size = New Size(715, 45)
         Panel3.TabIndex = 2
         ' 
         ' btCancel
         ' 
         btCancel.FlatStyle = FlatStyle.Flat
-        btCancel.Location = New Point(485, 7)
+        btCancel.Location = New Point(606, 9)
+        btCancel.Margin = New Padding(4)
         btCancel.Name = "btCancel"
-        btCancel.Size = New Size(75, 23)
-        btCancel.TabIndex = 2
+        btCancel.Size = New Size(94, 29)
+        btCancel.TabIndex = 998
         btCancel.Text = "&Cancelar"
         btCancel.UseVisualStyleBackColor = True
         ' 
         ' btNext
         ' 
         btNext.FlatStyle = FlatStyle.Flat
-        btNext.Location = New Point(404, 7)
+        btNext.Location = New Point(505, 9)
+        btNext.Margin = New Padding(4)
         btNext.Name = "btNext"
-        btNext.Size = New Size(75, 23)
+        btNext.Size = New Size(94, 29)
         btNext.TabIndex = 1
         btNext.Text = "&Próximo >"
         btNext.UseVisualStyleBackColor = True
@@ -116,34 +120,37 @@ Partial Class Main
         ' btPrevious
         ' 
         btPrevious.FlatStyle = FlatStyle.Flat
-        btPrevious.Location = New Point(327, 7)
+        btPrevious.Location = New Point(409, 9)
+        btPrevious.Margin = New Padding(4)
         btPrevious.Name = "btPrevious"
-        btPrevious.Size = New Size(75, 23)
-        btPrevious.TabIndex = 0
+        btPrevious.Size = New Size(94, 29)
+        btPrevious.TabIndex = 999
         btPrevious.Text = "< &Anterior"
         btPrevious.UseVisualStyleBackColor = True
         ' 
         ' panelMain
         ' 
         panelMain.Dock = DockStyle.Fill
-        panelMain.Location = New Point(0, 63)
+        panelMain.Location = New Point(0, 79)
+        panelMain.Margin = New Padding(4)
         panelMain.Name = "panelMain"
-        panelMain.Size = New Size(572, 239)
+        panelMain.Size = New Size(715, 298)
         panelMain.TabIndex = 3
         ' 
         ' Main
         ' 
-        AutoScaleDimensions = New SizeF(96F, 96F)
+        AutoScaleDimensions = New SizeF(120F, 120F)
         AutoScaleMode = AutoScaleMode.Dpi
         BackColor = Color.White
-        ClientSize = New Size(572, 338)
+        ClientSize = New Size(715, 422)
         Controls.Add(panelMain)
         Controls.Add(Panel3)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.FixedDialog
-        Margin = New Padding(3, 2, 3, 2)
+        Margin = New Padding(4, 2, 4, 2)
         MaximizeBox = False
         Name = "Main"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Assistente de exportação de dados WISEDAT (01.240107.1349)"
         Panel1.ResumeLayout(False)
         Panel4.ResumeLayout(False)
