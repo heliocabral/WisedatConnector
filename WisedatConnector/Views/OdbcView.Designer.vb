@@ -28,11 +28,13 @@ Partial Class OdbcView
         Label4 = New Label()
         Label5 = New Label()
         Label6 = New Label()
-        ComboBox1 = New ComboBox()
-        txtServer = New TextBox()
-        txtUser = New TextBox()
-        txtPassword = New TextBox()
+        Combo_Auth = New ComboBox()
+        Text_Server = New TextBox()
+        Text_User = New TextBox()
+        Text_Password = New TextBox()
         PictureBox1 = New PictureBox()
+        Label7 = New Label()
+        Text_DB = New TextBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -59,7 +61,7 @@ Partial Class OdbcView
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label3.Location = New Point(281, 115)
+        Label3.Location = New Point(275, 101)
         Label3.Name = "Label3"
         Label3.Size = New Size(73, 20)
         Label3.TabIndex = 1
@@ -69,7 +71,7 @@ Partial Class OdbcView
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label4.Location = New Point(251, 155)
+        Label4.Location = New Point(246, 141)
         Label4.Name = "Label4"
         Label4.Size = New Size(102, 20)
         Label4.TabIndex = 1
@@ -79,7 +81,7 @@ Partial Class OdbcView
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label5.Location = New Point(273, 193)
+        Label5.Location = New Point(267, 179)
         Label5.Name = "Label5"
         Label5.Size = New Size(81, 20)
         Label5.TabIndex = 1
@@ -89,49 +91,49 @@ Partial Class OdbcView
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label6.Location = New Point(294, 232)
+        Label6.Location = New Point(293, 218)
         Label6.Name = "Label6"
         Label6.Size = New Size(55, 20)
         Label6.TabIndex = 1
         Label6.Text = "Senha:"
         ' 
-        ' ComboBox1
+        ' Combo_Auth
         ' 
-        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Items.AddRange(New Object() {"Autenticação Windows", "Autenticação SQL Server"})
-        ComboBox1.Location = New Point(350, 151)
-        ComboBox1.Margin = New Padding(3, 4, 3, 4)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(268, 28)
-        ComboBox1.TabIndex = 2
+        Combo_Auth.DropDownStyle = ComboBoxStyle.DropDownList
+        Combo_Auth.FormattingEnabled = True
+        Combo_Auth.Items.AddRange(New Object() {"Autenticação Windows", "Autenticação SQL Server"})
+        Combo_Auth.Location = New Point(351, 137)
+        Combo_Auth.Margin = New Padding(3, 4, 3, 4)
+        Combo_Auth.Name = "Combo_Auth"
+        Combo_Auth.Size = New Size(268, 28)
+        Combo_Auth.TabIndex = 2
         ' 
-        ' txtServer
+        ' Text_Server
         ' 
-        txtServer.Location = New Point(350, 111)
-        txtServer.Margin = New Padding(3, 4, 3, 4)
-        txtServer.Name = "txtServer"
-        txtServer.Size = New Size(268, 27)
-        txtServer.TabIndex = 1
+        Text_Server.Location = New Point(351, 97)
+        Text_Server.Margin = New Padding(3, 4, 3, 4)
+        Text_Server.Name = "Text_Server"
+        Text_Server.Size = New Size(268, 27)
+        Text_Server.TabIndex = 1
         ' 
-        ' txtUser
+        ' Text_User
         ' 
-        txtUser.Enabled = False
-        txtUser.Location = New Point(350, 189)
-        txtUser.Margin = New Padding(3, 4, 3, 4)
-        txtUser.Name = "txtUser"
-        txtUser.Size = New Size(268, 27)
-        txtUser.TabIndex = 3
+        Text_User.Enabled = False
+        Text_User.Location = New Point(351, 175)
+        Text_User.Margin = New Padding(3, 4, 3, 4)
+        Text_User.Name = "Text_User"
+        Text_User.Size = New Size(268, 27)
+        Text_User.TabIndex = 3
         ' 
-        ' txtPassword
+        ' Text_Password
         ' 
-        txtPassword.Enabled = False
-        txtPassword.Location = New Point(350, 228)
-        txtPassword.Margin = New Padding(3, 4, 3, 4)
-        txtPassword.Name = "txtPassword"
-        txtPassword.Size = New Size(268, 27)
-        txtPassword.TabIndex = 4
-        txtPassword.UseSystemPasswordChar = True
+        Text_Password.Enabled = False
+        Text_Password.Location = New Point(351, 214)
+        Text_Password.Margin = New Padding(3, 4, 3, 4)
+        Text_Password.Name = "Text_Password"
+        Text_Password.Size = New Size(268, 27)
+        Text_Password.TabIndex = 4
+        Text_Password.UseSystemPasswordChar = True
         ' 
         ' PictureBox1
         ' 
@@ -144,16 +146,38 @@ Partial Class OdbcView
         PictureBox1.TabIndex = 5
         PictureBox1.TabStop = False
         ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label7.Location = New Point(238, 253)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(110, 20)
+        Label7.TabIndex = 1
+        Label7.Text = "Base de dados:"
+        ' 
+        ' Text_DB
+        ' 
+        Text_DB.Enabled = False
+        Text_DB.Location = New Point(351, 249)
+        Text_DB.Margin = New Padding(3, 4, 3, 4)
+        Text_DB.Name = "Text_DB"
+        Text_DB.Size = New Size(268, 27)
+        Text_DB.TabIndex = 4
+        Text_DB.UseSystemPasswordChar = True
+        ' 
         ' OdbcView
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         Controls.Add(PictureBox1)
-        Controls.Add(txtPassword)
-        Controls.Add(txtUser)
-        Controls.Add(txtServer)
-        Controls.Add(ComboBox1)
+        Controls.Add(Text_DB)
+        Controls.Add(Text_Password)
+        Controls.Add(Text_User)
+        Controls.Add(Text_Server)
+        Controls.Add(Label7)
+        Controls.Add(Combo_Auth)
         Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(Label4)
@@ -174,9 +198,11 @@ Partial Class OdbcView
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents txtServer As TextBox
-    Friend WithEvents txtUser As TextBox
-    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents Combo_Auth As ComboBox
+    Friend WithEvents Text_Server As TextBox
+    Friend WithEvents Text_User As TextBox
+    Friend WithEvents Text_Password As TextBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Text_DB As TextBox
 End Class

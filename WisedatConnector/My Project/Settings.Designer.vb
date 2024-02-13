@@ -89,6 +89,18 @@ Namespace My
                 Me("ODBC_Password") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ODBC_DB() As String
+            Get
+                Return CType(Me("ODBC_DB"),String)
+            End Get
+            Set
+                Me("ODBC_DB") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
