@@ -32,6 +32,14 @@
             With control
                 .Dock = DockStyle.Fill
                 Me.panelMain.Controls.Add(control)
+
+                ' Set focus on the control with the TabIndex 1
+                For Each c As Control In control.Controls
+                    If c.TabIndex = 1 Then
+                        c.focus
+                        Exit For
+                    End If
+                Next
             End With
         Catch ex As Exception
             Throw
