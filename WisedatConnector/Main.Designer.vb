@@ -27,9 +27,9 @@ Partial Class Main
         Label2 = New Label()
         Label1 = New Label()
         Panel3 = New Panel()
-        btCancel = New Button()
-        btNext = New Button()
-        btPrevious = New Button()
+        btnCancelar = New Button()
+        btnProximo = New Button()
+        btnAnterior = New Button()
         panelMain = New Panel()
         Panel1.SuspendLayout()
         Panel4.SuspendLayout()
@@ -85,9 +85,9 @@ Partial Class Main
         ' Panel3
         ' 
         Panel3.BackColor = Color.WhiteSmoke
-        Panel3.Controls.Add(btCancel)
-        Panel3.Controls.Add(btNext)
-        Panel3.Controls.Add(btPrevious)
+        Panel3.Controls.Add(btnCancelar)
+        Panel3.Controls.Add(btnProximo)
+        Panel3.Controls.Add(btnAnterior)
         Panel3.Dock = DockStyle.Bottom
         Panel3.Location = New Point(0, 377)
         Panel3.Margin = New Padding(4, 2, 4, 2)
@@ -95,38 +95,38 @@ Partial Class Main
         Panel3.Size = New Size(715, 45)
         Panel3.TabIndex = 2
         ' 
-        ' btCancel
+        ' btnCancelar
         ' 
-        btCancel.FlatStyle = FlatStyle.Flat
-        btCancel.Location = New Point(606, 9)
-        btCancel.Margin = New Padding(4)
-        btCancel.Name = "btCancel"
-        btCancel.Size = New Size(94, 29)
-        btCancel.TabIndex = 998
-        btCancel.Text = "&Cancelar"
-        btCancel.UseVisualStyleBackColor = True
+        btnCancelar.FlatStyle = FlatStyle.Flat
+        btnCancelar.Location = New Point(606, 9)
+        btnCancelar.Margin = New Padding(4)
+        btnCancelar.Name = "btnCancelar"
+        btnCancelar.Size = New Size(94, 29)
+        btnCancelar.TabIndex = 998
+        btnCancelar.Text = "&Cancelar"
+        btnCancelar.UseVisualStyleBackColor = True
         ' 
-        ' btNext
+        ' btnProximo
         ' 
-        btNext.FlatStyle = FlatStyle.Flat
-        btNext.Location = New Point(505, 9)
-        btNext.Margin = New Padding(4)
-        btNext.Name = "btNext"
-        btNext.Size = New Size(94, 29)
-        btNext.TabIndex = 1
-        btNext.Text = "&Próximo >"
-        btNext.UseVisualStyleBackColor = True
+        btnProximo.FlatStyle = FlatStyle.Flat
+        btnProximo.Location = New Point(505, 9)
+        btnProximo.Margin = New Padding(4)
+        btnProximo.Name = "btnProximo"
+        btnProximo.Size = New Size(94, 29)
+        btnProximo.TabIndex = 1
+        btnProximo.Text = "&Próximo >"
+        btnProximo.UseVisualStyleBackColor = True
         ' 
-        ' btPrevious
+        ' btnAnterior
         ' 
-        btPrevious.FlatStyle = FlatStyle.Flat
-        btPrevious.Location = New Point(409, 9)
-        btPrevious.Margin = New Padding(4)
-        btPrevious.Name = "btPrevious"
-        btPrevious.Size = New Size(94, 29)
-        btPrevious.TabIndex = 999
-        btPrevious.Text = "< &Anterior"
-        btPrevious.UseVisualStyleBackColor = True
+        btnAnterior.FlatStyle = FlatStyle.Flat
+        btnAnterior.Location = New Point(409, 9)
+        btnAnterior.Margin = New Padding(4)
+        btnAnterior.Name = "btnAnterior"
+        btnAnterior.Size = New Size(94, 29)
+        btnAnterior.TabIndex = 999
+        btnAnterior.Text = "< &Anterior"
+        btnAnterior.UseVisualStyleBackColor = True
         ' 
         ' panelMain
         ' 
@@ -164,8 +164,8 @@ Partial Class Main
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents btCancel As Button
-    Friend WithEvents btNext As Button
-    Friend WithEvents btPrevious As Button
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnProximo As Button
+    Friend WithEvents btnAnterior As Button
     Friend WithEvents panelMain As Panel
 End Class

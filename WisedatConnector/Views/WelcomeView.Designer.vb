@@ -30,30 +30,31 @@ Partial Class WelcomeView
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(14, 15)
+        Label1.Location = New Point(16, 20)
         Label1.Name = "Label1"
-        Label1.Size = New Size(382, 21)
+        Label1.Size = New Size(477, 28)
         Label1.TabIndex = 0
         Label1.Text = "Bem-vindo ao assistente de exportação de dados"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(27, 49)
+        Label2.Location = New Point(31, 65)
         Label2.Name = "Label2"
-        Label2.Size = New Size(358, 15)
+        Label2.Size = New Size(460, 20)
         Label2.TabIndex = 1
         Label2.Text = "Este assistente vai ajudálo a exportar dados  da aplicação WISEDAT."
         ' 
-        ' Weilcome
+        ' WelcomeView
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Name = "Weilcome"
-        Size = New Size(416, 78)
+        Margin = New Padding(3, 4, 3, 4)
+        Name = "WelcomeView"
+        Size = New Size(501, 108)
         ResumeLayout(False)
         PerformLayout()
     End Sub

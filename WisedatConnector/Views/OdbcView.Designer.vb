@@ -158,7 +158,6 @@ Partial Class OdbcView
         ' 
         ' Text_Db
         ' 
-        Text_Db.Enabled = False
         Text_Db.Location = New Point(351, 249)
         Text_Db.Margin = New Padding(3, 4, 3, 4)
         Text_Db.Name = "Text_Db"

@@ -30,6 +30,21 @@
     Public Function getTotalViewsCount() As Integer
         Return Me.ViewList.Count
     End Function
+
+    ' Validate if the currentView index
+    Public Function CurrentViewValidation(ByVal nextStep As Integer) As Boolean
+        Try
+            If nextStep >= 0 AndAlso nextStep < Me.getTotalViewsCount Then
+                Return True
+            End If
+
+            Return False
+
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
+
 #End Region
 
 

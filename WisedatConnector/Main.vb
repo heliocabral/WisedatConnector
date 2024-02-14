@@ -11,20 +11,43 @@
         ' Add any initialization after the InitializeComponent() call.
 
         ' Load WelcomeView
-        loadWelcomeView()
+        carregarView(0)
     End Sub
-
-    Private Sub loadWelcomeView()
+    Private Sub btnAnterior_Click(sender As Object, e As EventArgs) Handles btnAnterior.Click
         Try
-            addView(WizardCurrentStep)
+            ' Verifica se é possível retroceder um passo
+            If MainClass.CurrentViewValidation(WizardCurrentStep - 1) Then
+                WizardCurrentStep -= 1
+                CarregarView(WizardCurrentStep)
+            End If
         Catch ex As Exception
             MsgBox("Não foi possível carregar a view!" & vbCrLf & ex.Message, MsgBoxStyle.Critical)
             End
         End Try
-    End Sub
 
-#Region "Private Methods"
-    Private Sub addView(ByVal index As Integer)
+    End Sub
+    Private Sub btnProximo_Click(sender As Object, e As EventArgs) Handles btnProximo.Click
+
+
+        Try
+            ' Verifica Dependencias
+            If Not VerificarDependencias() Then Exit Sub
+            ' Verificar se é possível avançar um passo
+            If MainClass.CurrentViewValidation(WizardCurrentStep + 1) Then
+                WizardCurrentStep += 1
+                CarregarView(WizardCurrentStep)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+
+    End Sub
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        If MsgBox("Deseja realmente cancelar o assistente?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar operação") = MsgBoxResult.Yes Then
+            End
+        End If
+    End Sub
+    Private Sub CarregarView(ByVal index As Integer)
         Try
             clearViews()
             Dim control As New UserControl
@@ -36,7 +59,7 @@
                 ' Set focus on the control with the TabIndex 1
                 For Each c As Control In control.Controls
                     If c.TabIndex = 1 Then
-                        c.focus
+                        c.Focus()
                         Exit For
                     End If
                 Next
@@ -50,53 +73,21 @@
         panelMain.Controls.Clear()
     End Sub
 
-    ' Validate if the currentView index
-    Private Function CurrentViewValidation(ByVal nextStep As Integer) As Boolean
+
+    Private Function VerificarDependencias() As Boolean
         Try
-            If nextStep >= 0 AndAlso nextStep < MainClass.getTotalViewsCount Then
-                Return True
-            End If
-
-            Return False
-
+            Select Case WizardCurrentStep
+                Case 1
+                    ' Testa Ligação ODBC
+                    Dim c As New OdbcView
+                    c = panelMain.Controls(0)
+                    Return c.formValidation
+                Case Else
+                    Return True
+            End Select
         Catch ex As Exception
             Throw
         End Try
     End Function
-#End Region
-    Private Sub btCancel_Click(sender As Object, e As EventArgs) Handles btCancel.Click
-        If MsgBox("Deseja realmente cancelar o assistente?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar operação") = MsgBoxResult.Yes Then
-            End
-        End If
-    End Sub
 
-    Private Sub btNext_Click(sender As Object, e As EventArgs) Handles btNext.Click
-
-        ' Verifica se existem validações
-
-        Try
-            If CurrentViewValidation(WizardCurrentStep + 1) Then
-                WizardCurrentStep += 1
-                addView(WizardCurrentStep)
-            End If
-        Catch ex As Exception
-            MsgBox("Não foi possível carregar a view!" & vbCrLf & ex.Message, MsgBoxStyle.Critical)
-            End
-        End Try
-
-
-    End Sub
-
-    Private Sub btPrevious_Click(sender As Object, e As EventArgs) Handles btPrevious.Click
-        Try
-            If CurrentViewValidation(WizardCurrentStep - 1) Then
-                WizardCurrentStep -= 1
-                addView(WizardCurrentStep)
-            End If
-        Catch ex As Exception
-            MsgBox("Não foi possível carregar a view!" & vbCrLf & ex.Message, MsgBoxStyle.Critical)
-            End
-        End Try
-
-    End Sub
 End Class

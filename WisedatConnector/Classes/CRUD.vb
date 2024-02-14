@@ -1,14 +1,49 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data
 Imports System.IO
+Imports WisedatConnector.My
 
 Public Class CRUD
-    Public sqlConn As New SqlConnection("Data Source=" &
-        My.Settings.ODBC_Server & ";Initial Catalog=" & My.Settings.ODBC_DB &
-        ";User Id=" & My.Settings.ODBC_User & ";Password=" &
-        My.Settings.ODBC_Password & ";Integrated Security=False;")
+    Public sqlConn As SqlConnection
 
-    Public Sub TestDbConn()
+    Public Sub New(Optional ByVal ODBC_Server As String = Nothing,
+                   Optional ByVal ODBC_DB As String = Nothing,
+                   Optional ByVal ODBC_User As String = Nothing,
+                   Optional ByVal ODBC_Password As String = Nothing,
+                   Optional ByVal ODBC_AuthType As Boolean = Nothing)
+
+        Try
+            ' Overwrite
+            If ODBC_Server = Nothing Then
+                With My.Settings
+                    ODBC_Server = .ODBC_Server
+                    ODBC_DB = .ODBC_DB
+                    ODBC_User = .ODBC_User
+                    ODBC_Password = .ODBC_Password
+                    ODBC_AuthType = .ODBC_AuthType
+                End With
+            End If
+
+            Dim StrConnection As String
+
+            StrConnection = "Data Source=" & ODBC_Server & ";" &
+                "Initial Catalog =" & ODBC_DB & ";"
+
+            If Not ODBC_AuthType Then
+                StrConnection += "User Id=" & ODBC_User & ";" &
+                    "Password=" & ODBC_Password & ";"
+            End If
+
+            StrConnection += "Integrated Security=" & ODBC_AuthType & ";"
+
+            Me.sqlConn = New SqlConnection(StrConnection)
+
+        Catch ex As Exception
+            Throw
+        End Try
+    End Sub
+
+    Public Function TestDbConn() As Boolean
         ' Testa a ligação à base de dados
         Dim testConn As New SqlConnection
 
@@ -18,13 +53,15 @@ Public Class CRUD
                 .Open()
                 If .State = ConnectionState.Open Then
                     MsgBox("Teste de ligação à base de dados realizado com sucesso!", MsgBoxStyle.Information)
+                    Return True
                 End If
             End With
+            Return False
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            Throw
         End Try
 
-    End Sub
+    End Function
     Public Function ExecQuerryTransaction(ByVal SQL() As SqlClient.SqlCommand)
 
         Dim sqlCmd As New SqlClient.SqlCommand
