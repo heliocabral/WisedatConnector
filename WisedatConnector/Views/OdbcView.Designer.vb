@@ -163,7 +163,6 @@ Partial Class OdbcView
         Text_Db.Name = "Text_Db"
         Text_Db.Size = New Size(268, 27)
         Text_Db.TabIndex = 5
-        Text_Db.UseSystemPasswordChar = True
         ' 
         ' OdbcView
         ' 

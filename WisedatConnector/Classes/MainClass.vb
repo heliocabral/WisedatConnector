@@ -12,6 +12,7 @@
         With Me.ViewList
             .Add(New WelcomeView)
             .Add(New OdbcView)
+            .Add(New ExportView)
         End With
     End Sub
 
