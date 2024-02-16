@@ -81,6 +81,19 @@
                     ' Testa Ligação ODBC
                     Dim c As New OdbcView
                     c = panelMain.Controls(0)
+
+                    Dim validatedForm As Boolean = c.formValidation
+
+                    ' Save ODBC credentials
+                    If validatedForm Then c.saveOdbcCredentials()
+
+                    Return validatedForm
+
+                Case 2
+                    ' ExportView
+                    Dim c As New ExportView
+                    c = panelMain.Controls(0)
+
                     Return c.formValidation
                 Case Else
                     Return True

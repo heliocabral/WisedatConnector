@@ -137,7 +137,7 @@ Public Class CRUD
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            Throw
         End Try
 
         Return sqlDr

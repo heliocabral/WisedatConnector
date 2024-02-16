@@ -13,6 +13,7 @@
             .Add(New WelcomeView)
             .Add(New OdbcView)
             .Add(New ExportView)
+            .Add(New ResumeView)
         End With
     End Sub
 

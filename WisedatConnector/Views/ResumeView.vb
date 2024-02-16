@@ -1,0 +1,28 @@
+﻿Public Class ResumeView
+    Private Sub ResumeView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DataGridView1.Rows.Add("aaa", "bbb", "ccc")
+        DataGridView1.Rows.Add("ddd", "eee", "fff")
+        DataGridView1.Rows.Add("ggg", "hhh", "iii")
+        DataGridView1.Rows.Add("jjj", "kkk", "lll")
+        DataGridView1.Rows.Add("aaa", "bbb", "ccc")
+        DataGridView1.Rows.Add("ddd", "eee", "fff")
+        DataGridView1.Rows.Add("ggg", "hhh", "iii")
+        DataGridView1.Rows.Add("jjj", "kkk", "lll")
+        DataGridView1.Rows.Add("aaa", "bbb", "ccc")
+        DataGridView1.Rows.Add("ddd", "eee", "fff")
+        DataGridView1.Rows.Add("ggg", "hhh", "iii")
+        DataGridView1.Rows.Add("jjj", "kkk", "lll")
+        DataGridView1.Rows.Add("aaa", "bbb", "ccc")
+        DataGridView1.Rows.Add("ddd", "eee", "fff")
+        DataGridView1.Rows.Add("ggg", "hhh", "iii")
+        DataGridView1.Rows.Add("jjj", "kkk", "lll")
+        DataGridView1.Rows.Add("aaa", "bbb", "ccc")
+        DataGridView1.Rows.Add("ddd", "eee", "fff")
+        DataGridView1.Rows.Add("ggg", "hhh", "iii")
+        DataGridView1.Rows.Add("jjj", "kkk", "lll")
+        DataGridView1.Rows.Add("aaa", "bbb", "ccc")
+        DataGridView1.Rows.Add("ddd", "eee", "fff")
+        DataGridView1.Rows.Add("ggg", "hhh", "iii")
+        DataGridView1.Rows.Add("jjj", "kkk", "lll")
+    End Sub
+End Class

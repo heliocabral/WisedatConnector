@@ -31,6 +31,8 @@ Partial Class ExportView
         cblAno = New ComboBox()
         Label5 = New Label()
         cblMes = New ComboBox()
+        Label6 = New Label()
+        chkRecibos = New CheckBox()
         SuspendLayout()
         ' 
         ' Label2
@@ -55,6 +57,7 @@ Partial Class ExportView
         ' txtFicheiro
         ' 
         txtFicheiro.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        txtFicheiro.Enabled = False
         txtFicheiro.Location = New Point(113, 74)
         txtFicheiro.Margin = New Padding(3, 2, 3, 2)
         txtFicheiro.Name = "txtFicheiro"
@@ -120,11 +123,34 @@ Partial Class ExportView
         cblMes.Size = New Size(133, 23)
         cblMes.TabIndex = 10
         ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(27, 153)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(221, 15)
+        Label6.TabIndex = 3
+        Label6.Text = "Indique as tabelas que pretende exportar"
+        ' 
+        ' chkRecibos
+        ' 
+        chkRecibos.AutoSize = True
+        chkRecibos.Checked = True
+        chkRecibos.CheckState = CheckState.Checked
+        chkRecibos.Enabled = False
+        chkRecibos.Location = New Point(70, 177)
+        chkRecibos.Name = "chkRecibos"
+        chkRecibos.Size = New Size(67, 19)
+        chkRecibos.TabIndex = 11
+        chkRecibos.Text = "Recibos"
+        chkRecibos.UseVisualStyleBackColor = True
+        ' 
         ' ExportView
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
+        Controls.Add(chkRecibos)
         Controls.Add(cblMes)
         Controls.Add(Label5)
         Controls.Add(cblAno)
@@ -132,11 +158,12 @@ Partial Class ExportView
         Controls.Add(Label3)
         Controls.Add(btnProcurar)
         Controls.Add(txtFicheiro)
+        Controls.Add(Label6)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Margin = New Padding(3, 2, 3, 2)
         Name = "ExportView"
-        Size = New Size(506, 148)
+        Size = New Size(506, 209)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -150,4 +177,6 @@ Partial Class ExportView
     Friend WithEvents cblAno As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents cblMes As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents chkRecibos As CheckBox
 End Class
