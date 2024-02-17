@@ -52,7 +52,6 @@ Public Class CRUD
                 .ConnectionString = sqlConn.ConnectionString
                 .Open()
                 If .State = ConnectionState.Open Then
-                    MsgBox("Teste de ligação à base de dados realizado com sucesso!", MsgBoxStyle.Information)
                     Return True
                 End If
             End With

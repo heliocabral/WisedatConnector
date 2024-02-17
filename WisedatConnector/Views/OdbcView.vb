@@ -7,10 +7,6 @@
         ' Add any initialization after the InitializeComponent() call.
         Combo_Auth.SelectedIndex = 0
 
-        ' Verify ODBC Credentials
-
-        ' Test
-        MsgBox(My.Settings.ODBC_Server)
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Combo_Auth.SelectedIndexChanged
@@ -32,6 +28,9 @@
                                             Trim(Text_User.Text),
                                             Trim(Text_Password.Text),
                                             Not CType(Combo_Auth.SelectedIndex, Boolean)) Then Return False
+
+            MsgBox("Teste de ligação à base de dados realizado com sucesso!", MsgBoxStyle.Information)
+
             Return True
 
         Catch ex As Exception

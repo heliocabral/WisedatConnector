@@ -33,10 +33,8 @@ Public Class OdbcClass
                 .ODBC_User = Trim(ODBC_User)
                 .ODBC_Password = Trim(ODBC_Password)
                 .ODBC_AuthType = ODBC_AuthType
+                .Save()
             End With
-
-            ' Test
-            MsgBox(My.Settings.ODBC_Server)
 
         Catch ex As Exception
             Throw

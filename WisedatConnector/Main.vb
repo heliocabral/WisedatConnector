@@ -11,7 +11,16 @@
         ' Add any initialization after the InitializeComponent() call.
 
         ' Load WelcomeView
-        carregarView(0)
+        CarregarView(0)
+
+        ' Checks for ODBC config
+        If MainClass.TestOdbcConnection() Then
+            ' Ignore ODBC_View
+            MsgBox("Ignore ODBC_View")
+        Else
+            ' Display ODBC_View
+            MsgBox("Display ODBC_View")
+        End If
     End Sub
     Private Sub btnAnterior_Click(sender As Object, e As EventArgs) Handles btnAnterior.Click
         Try
@@ -27,7 +36,6 @@
 
     End Sub
     Private Sub btnProximo_Click(sender As Object, e As EventArgs) Handles btnProximo.Click
-
 
         Try
             ' Verifica Dependencias

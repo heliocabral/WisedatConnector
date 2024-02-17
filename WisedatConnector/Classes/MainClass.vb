@@ -8,7 +8,7 @@
 
 #Region "Class initialization"
     ' Initialization of Views
-    Private Sub ViewListInit()
+    Friend Sub ViewListInit()
         With Me.ViewList
             .Add(New WelcomeView)
             .Add(New OdbcView)
@@ -46,6 +46,16 @@
             Throw
         End Try
     End Function
+
+    Friend Shared Function TestOdbcConnection() As Boolean
+        Try
+            Dim CRUD As New CRUD
+            Return CRUD.TestDbConn
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
 
 #End Region
 
