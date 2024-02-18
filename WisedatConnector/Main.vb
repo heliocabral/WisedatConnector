@@ -1,5 +1,5 @@
 ﻿Public Class Main
-    Private MainClass As New MainClass
+    'Private MainClass As New MainClass
 
     ' Controls the Wizard current step
     Private WizardCurrentStep As Integer = 0
@@ -11,16 +11,15 @@
         ' Add any initialization after the InitializeComponent() call.
 
         ' Load WelcomeView
+        MainClass.ViewList.Add(New WelcomeView)
         CarregarView(0)
 
         ' Checks for ODBC config
-        If MainClass.TestOdbcConnection() Then
-            ' Ignore ODBC_View
-            MsgBox("Ignore ODBC_View")
-        Else
-            ' Display ODBC_View
-            MsgBox("Display ODBC_View")
-        End If
+        ' If True display ODBC_View
+        If Not MainClass.TestOdbcConnection() Then MainClass.ViewList.Add(New WelcomeView)
+
+        MainClass.ViewList.Add(New ExportView)
+        MainClass.ViewList.Add(New ResumeView)
     End Sub
     Private Sub btnAnterior_Click(sender As Object, e As EventArgs) Handles btnAnterior.Click
         Try
@@ -59,7 +58,7 @@
         Try
             clearViews()
             Dim control As New UserControl
-            control = Me.MainClass.getView(index)
+            control = MainClass.getView(index)
             With control
                 .Dock = DockStyle.Fill
                 Me.panelMain.Controls.Add(control)
@@ -80,12 +79,14 @@
     Private Sub clearViews()
         panelMain.Controls.Clear()
     End Sub
-
-
     Private Function VerificarDependencias() As Boolean
         Try
-            Select Case WizardCurrentStep
-                Case 1
+            Dim ct As New Control
+            ct = panelMain.Controls(0)
+
+            Select Case ct.Name
+
+                Case "OdbcView"
                     ' Testa Ligação ODBC
                     Dim c As New OdbcView
                     c = panelMain.Controls(0)
@@ -97,7 +98,7 @@
 
                     Return validatedForm
 
-                Case 2
+                Case "ExportView"
                     ' ExportView
                     Dim c As New ExportView
                     c = panelMain.Controls(0)
@@ -110,5 +111,6 @@
             Throw
         End Try
     End Function
+
 
 End Class

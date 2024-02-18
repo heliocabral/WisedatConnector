@@ -1,42 +1,42 @@
 ﻿Public Class MainClass
-    Private ViewList As New List(Of UserControl)
+    Friend Shared ViewList As New List(Of UserControl)
 
     Public Sub New()
         ' Initialization
-        ViewListInit()
+        ' ViewListInit()
     End Sub
 
 #Region "Class initialization"
     ' Initialization of Views
-    Friend Sub ViewListInit()
-        With Me.ViewList
-            .Add(New WelcomeView)
-            .Add(New OdbcView)
-            .Add(New ExportView)
-            .Add(New ResumeView)
-        End With
-    End Sub
+    'Friend Sub ViewListInit()
+    '    With ViewList
+    '        .Add(New WelcomeView)
+    '        .Add(New OdbcView)
+    '        .Add(New ExportView)
+    '        .Add(New ResumeView)
+    '    End With
+    'End Sub
 
 #End Region
 
 #Region "Public Methods"
     'Returns a specific View
-    Public Function getView(ByVal index As Integer) As UserControl
+    Friend Shared Function getView(ByVal index As Integer) As UserControl
         Try
-            Return Me.ViewList(index)
+            Return ViewList(index)
         Catch ex As Exception
             Throw
         End Try
     End Function
 
-    Public Function getTotalViewsCount() As Integer
-        Return Me.ViewList.Count
+    Friend Shared Function getTotalViewsCount() As Integer
+        Return ViewList.Count
     End Function
 
     ' Validate if the currentView index
-    Public Function CurrentViewValidation(ByVal nextStep As Integer) As Boolean
+    Friend Shared Function CurrentViewValidation(ByVal nextStep As Integer) As Boolean
         Try
-            If nextStep >= 0 AndAlso nextStep < Me.getTotalViewsCount Then
+            If nextStep >= 0 AndAlso nextStep < getTotalViewsCount() Then
                 Return True
             End If
 
