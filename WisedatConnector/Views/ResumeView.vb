@@ -4,6 +4,7 @@ Public Class ResumeView
     Private TableName As String
     Private Ano As Integer
     Private Mes As Integer
+    Friend UltmForm As Boolean = False
 
     Public Sub New(ByVal TableName As String, ByVal Ano As Integer, ByVal mes As Integer)
 

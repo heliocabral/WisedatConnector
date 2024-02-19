@@ -27,9 +27,9 @@ Partial Class Main
         Label2 = New Label()
         Label1 = New Label()
         Panel3 = New Panel()
-        btnCancelar = New Button()
-        btnProximo = New Button()
-        btnAnterior = New Button()
+        BtnCancelar = New Button()
+        BtnProximo = New Button()
+        BtnAnterior = New Button()
         panelMain = New Panel()
         Panel1.SuspendLayout()
         Panel4.SuspendLayout()
@@ -42,9 +42,9 @@ Partial Class Main
         Panel1.Controls.Add(Panel4)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
-        Panel1.Margin = New Padding(4, 2, 4, 2)
+        Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(715, 79)
+        Panel1.Size = New Size(572, 63)
         Panel1.TabIndex = 0
         ' 
         ' Panel4
@@ -53,9 +53,9 @@ Partial Class Main
         Panel4.Controls.Add(Label1)
         Panel4.Dock = DockStyle.Left
         Panel4.Location = New Point(0, 0)
-        Panel4.Margin = New Padding(4, 2, 4, 2)
+        Panel4.Margin = New Padding(3, 2, 3, 2)
         Panel4.Name = "Panel4"
-        Panel4.Size = New Size(365, 79)
+        Panel4.Size = New Size(292, 63)
         Panel4.TabIndex = 0
         ' 
         ' Label2
@@ -63,10 +63,9 @@ Partial Class Main
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.ForeColor = Color.White
-        Label2.Location = New Point(31, 45)
-        Label2.Margin = New Padding(4, 0, 4, 0)
+        Label2.Location = New Point(25, 36)
         Label2.Name = "Label2"
-        Label2.Size = New Size(276, 23)
+        Label2.Size = New Size(224, 19)
         Label2.TabIndex = 1
         Label2.Text = "Assistente de exportação de dados"
         ' 
@@ -75,79 +74,75 @@ Partial Class Main
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.ForeColor = Color.White
-        Label1.Location = New Point(12, 8)
-        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Location = New Point(10, 6)
         Label1.Name = "Label1"
-        Label1.Size = New Size(230, 31)
+        Label1.Size = New Size(194, 25)
         Label1.TabIndex = 0
         Label1.Text = "WISEDAT Connector"
         ' 
         ' Panel3
         ' 
         Panel3.BackColor = Color.WhiteSmoke
-        Panel3.Controls.Add(btnCancelar)
-        Panel3.Controls.Add(btnProximo)
-        Panel3.Controls.Add(btnAnterior)
+        Panel3.Controls.Add(BtnCancelar)
+        Panel3.Controls.Add(BtnProximo)
+        Panel3.Controls.Add(BtnAnterior)
         Panel3.Dock = DockStyle.Bottom
-        Panel3.Location = New Point(0, 377)
-        Panel3.Margin = New Padding(4, 2, 4, 2)
+        Panel3.Location = New Point(0, 302)
+        Panel3.Margin = New Padding(3, 2, 3, 2)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(715, 45)
+        Panel3.Size = New Size(572, 36)
         Panel3.TabIndex = 2
         ' 
-        ' btnCancelar
+        ' BtnCancelar
         ' 
-        btnCancelar.FlatStyle = FlatStyle.Flat
-        btnCancelar.Location = New Point(606, 9)
-        btnCancelar.Margin = New Padding(4, 4, 4, 4)
-        btnCancelar.Name = "btnCancelar"
-        btnCancelar.Size = New Size(94, 29)
-        btnCancelar.TabIndex = 998
-        btnCancelar.Text = "&Cancelar"
-        btnCancelar.UseVisualStyleBackColor = True
+        BtnCancelar.FlatStyle = FlatStyle.Flat
+        BtnCancelar.Location = New Point(485, 7)
+        BtnCancelar.Name = "BtnCancelar"
+        BtnCancelar.Size = New Size(75, 23)
+        BtnCancelar.TabIndex = 998
+        BtnCancelar.Text = "&Cancelar"
+        BtnCancelar.UseVisualStyleBackColor = True
         ' 
-        ' btnProximo
+        ' BtnProximo
         ' 
-        btnProximo.FlatStyle = FlatStyle.Flat
-        btnProximo.Location = New Point(505, 9)
-        btnProximo.Margin = New Padding(4, 4, 4, 4)
-        btnProximo.Name = "btnProximo"
-        btnProximo.Size = New Size(94, 29)
-        btnProximo.TabIndex = 1
-        btnProximo.Text = "&Próximo >"
-        btnProximo.UseVisualStyleBackColor = True
+        BtnProximo.FlatStyle = FlatStyle.Flat
+        BtnProximo.Location = New Point(404, 7)
+        BtnProximo.Name = "BtnProximo"
+        BtnProximo.Size = New Size(75, 23)
+        BtnProximo.TabIndex = 1
+        BtnProximo.Tag = "0"
+        BtnProximo.Text = "&Próximo >"
+        BtnProximo.UseVisualStyleBackColor = True
         ' 
-        ' btnAnterior
+        ' BtnAnterior
         ' 
-        btnAnterior.FlatStyle = FlatStyle.Flat
-        btnAnterior.Location = New Point(409, 9)
-        btnAnterior.Margin = New Padding(4, 4, 4, 4)
-        btnAnterior.Name = "btnAnterior"
-        btnAnterior.Size = New Size(94, 29)
-        btnAnterior.TabIndex = 999
-        btnAnterior.Text = "< &Anterior"
-        btnAnterior.UseVisualStyleBackColor = True
+        BtnAnterior.FlatStyle = FlatStyle.Flat
+        BtnAnterior.Location = New Point(327, 7)
+        BtnAnterior.Name = "BtnAnterior"
+        BtnAnterior.Size = New Size(75, 23)
+        BtnAnterior.TabIndex = 999
+        BtnAnterior.Text = "< &Anterior"
+        BtnAnterior.UseVisualStyleBackColor = True
         ' 
         ' panelMain
         ' 
         panelMain.Dock = DockStyle.Fill
-        panelMain.Location = New Point(0, 79)
-        panelMain.Margin = New Padding(4, 4, 4, 4)
+        panelMain.Location = New Point(0, 63)
         panelMain.Name = "panelMain"
-        panelMain.Size = New Size(715, 298)
+        panelMain.Size = New Size(572, 239)
         panelMain.TabIndex = 3
         ' 
         ' Main
         ' 
-        AutoScaleDimensions = New SizeF(120F, 120F)
+        AutoScaleDimensions = New SizeF(96F, 96F)
         AutoScaleMode = AutoScaleMode.Dpi
         BackColor = Color.White
-        ClientSize = New Size(715, 422)
+        ClientSize = New Size(572, 338)
         Controls.Add(panelMain)
         Controls.Add(Panel3)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.FixedDialog
-        Margin = New Padding(4, 2, 4, 2)
+        Margin = New Padding(3, 2, 3, 2)
         MaximizeBox = False
         Name = "Main"
         StartPosition = FormStartPosition.CenterScreen
@@ -164,8 +159,8 @@ Partial Class Main
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnCancelar As Button
-    Friend WithEvents btnProximo As Button
-    Friend WithEvents btnAnterior As Button
+    Friend WithEvents BtnCancelar As Button
+    Friend WithEvents BtnProximo As Button
+    Friend WithEvents BtnAnterior As Button
     Friend WithEvents panelMain As Panel
 End Class

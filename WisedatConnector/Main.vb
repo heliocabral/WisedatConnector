@@ -20,7 +20,7 @@
 
         MainClass.ViewList.Add(New ExportView)
     End Sub
-    Private Sub btnAnterior_Click(sender As Object, e As EventArgs) Handles btnAnterior.Click
+    Private Sub BtnAnterior_Click(sender As Object, e As EventArgs) Handles BtnAnterior.Click
         Try
             ' Verifica se é possível retroceder um passo
             If MainClass.CurrentViewValidation(WizardCurrentStep - 1) Then
@@ -33,22 +33,29 @@
         End Try
 
     End Sub
-    Private Sub btnProximo_Click(sender As Object, e As EventArgs) Handles btnProximo.Click
+    Private Sub BnProximo_Click(sender As Object, e As EventArgs) Handles BtnProximo.Click
 
         Try
-            ' Verifica Dependencias
-            If Not VerificarDependencias() Then Exit Sub
-            ' Verificar se é possível avançar um passo
-            If MainClass.CurrentViewValidation(WizardCurrentStep + 1) Then
-                WizardCurrentStep += 1
-                CarregarView(WizardCurrentStep)
+            If BtnProximo.Tag = 0 Then
+                ' Verifica Dependencias
+                If Not VerificarDependencias() Then Exit Sub
+                ' Verificar se é possível avançar um passo
+                If MainClass.CurrentViewValidation(WizardCurrentStep + 1) Then
+                    WizardCurrentStep += 1
+                    CarregarView(WizardCurrentStep)
+                End If
+            Else
+                Dim c As New DataExportView
+                c = Me.panelMain.Controls(0)
+
+                c.ExportarDados()
             End If
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            Throw
         End Try
 
     End Sub
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         If MsgBox("Deseja realmente cancelar o assistente?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar operação") = MsgBoxResult.Yes Then
             End
         End If
@@ -62,6 +69,13 @@
                 .Dock = DockStyle.Fill
                 Me.panelMain.Controls.Add(control)
 
+                If control.GetType Is GetType(DataExportView) Then
+                    BtnProximo.Text = "&Terminar"
+                    BtnProximo.Tag = 1
+                Else
+                    BtnProximo.Text = "&Próximo >"
+                    BtnProximo.Tag = 0
+                End If
                 ' Set focus on the control with the TabIndex 1
                 For Each c As Control In control.Controls
                     If c.TabIndex = 1 Then
@@ -75,7 +89,7 @@
         End Try
     End Sub
     ' Clear the current view
-    Private Sub clearViews()
+    Private Sub ClearViews()
         panelMain.Controls.Clear()
     End Sub
     Private Function VerificarDependencias() As Boolean
@@ -114,9 +128,17 @@
                         If c.chkRecibos.Checked Then
                             MainClass.ViewList.Add(New ResumeView("Recibos", c.cblAno.SelectedValue, c.cblMes.SelectedIndex + 1))
                         End If
+
+                        ' Tag the last ResumeView as last 
+                        CType(MainClass.ViewList(MainClass.getTotalViewsCount - 1), ResumeView).UltmForm = True
+                        MainClass.ViewList.Add(New DataExportView)
                     End If
 
                     Return validation
+
+                Case "ResumeView"
+                    Return True
+
                 Case Else
                     Return True
             End Select

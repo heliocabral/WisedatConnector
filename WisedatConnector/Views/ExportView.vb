@@ -23,7 +23,7 @@
 
     End Sub
 
-    Private Sub btnProcurar_Click(sender As Object, e As EventArgs) Handles btnProcurar.Click
+    Private Sub BtnProcurar_Click(sender As Object, e As EventArgs) Handles btnProcurar.Click
         Dim folderBrowserDialog As New FolderBrowserDialog
         With folderBrowserDialog
             .Description = "Escolha uma pasta para salvar os arquivos"
@@ -34,7 +34,7 @@
         End If
     End Sub
 
-    Public Function formValidation() As Boolean
+    Public Function FormValidation() As Boolean
         Try
             If Trim(txtFicheiro.Text = "") Then Throw New Exception("O campo ""Localização e nome do ficheiro"" não foi preenchido!")
             Return True
