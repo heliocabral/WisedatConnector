@@ -24,19 +24,13 @@
     End Sub
 
     Private Sub btnProcurar_Click(sender As Object, e As EventArgs) Handles btnProcurar.Click
-        Dim SaveFileDialog As New SaveFileDialog
-        With SaveFileDialog
-            .CheckFileExists = False
-            .Title = "Escolha uma localização para salvar o arquivo"
-            .Filter = "Arquivo CSV (*.csv)|*.csv"
-            .DefaultExt = "csv"
-            .AddExtension = True
+        Dim folderBrowserDialog As New FolderBrowserDialog
+        With folderBrowserDialog
+            .Description = "Escolha uma pasta para salvar os arquivos"
         End With
 
-        If SaveFileDialog.ShowDialog() = DialogResult.OK Then
-            ' Aqui você pode acessar o nome do arquivo selecionado
-            Dim selectedFilePath As String = SaveFileDialog.FileName
-            txtFicheiro.Text = selectedFilePath
+        If folderBrowserDialog.ShowDialog() = DialogResult.OK Then
+            txtFicheiro.Text = folderBrowserDialog.SelectedPath
         End If
     End Sub
 
