@@ -22,40 +22,37 @@ Partial Class ResumeView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Label1 = New Label()
-        Label2 = New Label()
+        LblTitle = New Label()
+        LblDescription = New Label()
         Panel1 = New Panel()
         DataGridView1 = New DataGridView()
-        col1 = New DataGridViewTextBoxColumn()
-        col2 = New DataGridViewTextBoxColumn()
-        col3 = New DataGridViewTextBoxColumn()
         Panel1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' Label1
+        ' LblTitle
         ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(14, 15)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(71, 21)
-        Label1.TabIndex = 0
-        Label1.Text = "Resumo"
+        LblTitle.AutoSize = True
+        LblTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        LblTitle.Location = New Point(14, 15)
+        LblTitle.Name = "LblTitle"
+        LblTitle.Size = New Size(84, 21)
+        LblTitle.TabIndex = 0
+        LblTitle.Text = "Resumo | "
         ' 
-        ' Label2
+        ' LblDescription
         ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(27, 49)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(228, 15)
-        Label2.TabIndex = 1
-        Label2.Text = "Configure os seus dados de acesso ODBC."
+        LblDescription.AutoSize = True
+        LblDescription.Location = New Point(27, 49)
+        LblDescription.Name = "LblDescription"
+        LblDescription.Size = New Size(166, 15)
+        LblDescription.TabIndex = 1
+        LblDescription.Text = "Resumo dos dados a exportar."
         ' 
         ' Panel1
         ' 
-        Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(Label2)
+        Panel1.Controls.Add(LblTitle)
+        Panel1.Controls.Add(LblDescription)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
@@ -66,34 +63,19 @@ Partial Class ResumeView
         ' 
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.AllowUserToResizeColumns = False
+        DataGridView1.AllowUserToResizeRows = False
         DataGridView1.BackgroundColor = Color.White
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {col1, col2, col3})
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(0, 68)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
+        DataGridView1.RowHeadersVisible = False
+        DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 25
         DataGridView1.Size = New Size(572, 171)
         DataGridView1.TabIndex = 3
-        ' 
-        ' col1
-        ' 
-        col1.HeaderText = "Column1"
-        col1.Name = "col1"
-        col1.ReadOnly = True
-        ' 
-        ' col2
-        ' 
-        col2.HeaderText = "Column1"
-        col2.Name = "col2"
-        col2.ReadOnly = True
-        ' 
-        ' col3
-        ' 
-        col3.HeaderText = "Column1"
-        col3.Name = "col3"
-        col3.ReadOnly = True
         ' 
         ' ResumeView
         ' 
@@ -110,11 +92,8 @@ Partial Class ResumeView
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents LblTitle As Label
+    Friend WithEvents LblDescription As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents col1 As DataGridViewTextBoxColumn
-    Friend WithEvents col2 As DataGridViewTextBoxColumn
-    Friend WithEvents col3 As DataGridViewTextBoxColumn
 End Class

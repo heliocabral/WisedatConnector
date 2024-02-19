@@ -43,9 +43,7 @@
     Public Function formValidation() As Boolean
         Try
             If Trim(txtFicheiro.Text = "") Then Throw New Exception("O campo ""Localização e nome do ficheiro"" não foi preenchido!")
-
             Return True
-
         Catch ex As Exception
             Throw
         End Try

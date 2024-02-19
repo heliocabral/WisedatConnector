@@ -19,7 +19,6 @@
         If Not MainClass.TestOdbcConnection() Then MainClass.ViewList.Add(New WelcomeView)
 
         MainClass.ViewList.Add(New ExportView)
-        MainClass.ViewList.Add(New ResumeView)
     End Sub
     Private Sub btnAnterior_Click(sender As Object, e As EventArgs) Handles btnAnterior.Click
         Try
@@ -100,10 +99,24 @@
 
                 Case "ExportView"
                     ' ExportView
+
+                    ' Removes depricated views
+                    If MainClass.getTotalViewsCount - 1 > WizardCurrentStep Then
+                        MainClass.ViewList.RemoveRange(2, MainClass.getTotalViewsCount - 2)
+                    End If
+
                     Dim c As New ExportView
                     c = panelMain.Controls(0)
 
-                    Return c.formValidation
+                    Dim validation As Boolean = c.formValidation
+
+                    If validation Then
+                        If c.chkRecibos.Checked Then
+                            MainClass.ViewList.Add(New ResumeView("Recibos", c.cblAno.SelectedValue, c.cblMes.SelectedIndex + 1))
+                        End If
+                    End If
+
+                    Return validation
                 Case Else
                     Return True
             End Select
